@@ -1,0 +1,21 @@
+<mat-card class="card">
+    <div class="row">
+        <div class="col-12">
+            <div class="card-content name float-left">
+                {{data.name}}
+            </div>
+            <div class="float-right">
+                <button mat-mini-fab class="view-wish" (click)="emitEvent.emit()">
+                    <mat-icon >remove_red_eye</mat-icon>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="card-content wish">
+                {{trimdata(data.wish)}}
+            </div>
+        </div>
+    </div>
+</mat-card>

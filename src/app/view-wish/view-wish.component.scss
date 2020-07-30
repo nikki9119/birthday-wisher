@@ -1,0 +1,30 @@
+.heading{
+    color:#2196f3;
+    font-size: 2em !important;
+}
+
+.content-row{
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    line-height: normal;
+    font-family: 'Sen',sans-serif;
+    text-align: justify;
+}
+
+.big{
+    font-family:'Sen',sans-serif;
+    font-size:2em;
+    text-align: center;
+    padding-top:2em;
+    line-height: 1.5em;
+}
+
+.container-fluid{
+    background-image: url('../../assets/birthday-1.jpg');
+    width:100%;
+    height:auto;
+    background-size:cover;
+    background-repeat: repeat;
+    z-index: 0;
+    background-attachment: fixed;
+}

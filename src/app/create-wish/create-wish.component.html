@@ -1,0 +1,342 @@
+    <div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <mat-card class="card">
+                <div class="row">
+                    <div class="col-md-12">
+                        <mat-horizontal-stepper [linear]=true labelPosition="bottom">
+                            <mat-step [stepControl]="basicInfoForm">
+                                <ng-template matStepLabel>Basic Info</ng-template>
+                                <form [formGroup]="basicInfoForm">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="content-row heading">
+                                                Very happy to have you here!
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="content-row">
+                                                <mat-divider></mat-divider>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="content-row sub-heading">
+                                                Please enter your details to continue
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="content-row sub-heading float-left">
+                                                <span class="asterix">*</span>required
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-2 col-lg-1">
+                                            <div class="form-row">
+                                                Your Name <span class="asterix">*</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-lg-3">
+                                            <div class="form-value">
+                                                <mat-form-field appearance="outline">
+                                                    <input matInput type="text" placeholder="Name" formControlName="name" autofocus required autocomplete="off">
+                                                    <mat-error *ngIf="!(this.basicInfoForm.value['name'].length>0)">Required</mat-error>
+                                                </mat-form-field>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-2 col-lg-1">
+                                            <div class="form-row">
+                                                Gender <span class="asterix">*</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-lg-3">
+                                            <div class="form-value">
+                                                <mat-form-field appearance="outline">
+                                                    <mat-select formControlName="gender" placeholder="Select gender" required>
+                                                        <mat-option value="Male">Male</mat-option>
+                                                        <mat-option value="Female">Female</mat-option>
+                                                    </mat-select>
+                                                    <mat-error *ngIf="!(this.basicInfoForm.value['gender'].length>0)">Required</mat-error>
+                                                </mat-form-field>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="float-right">
+                                                <button mat-raised-button color="primary" [disabled]="!basicInfoForm.valid" matStepperNext>Next</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </mat-step>
+                            <mat-step [stepControl]="agreementForm">
+                                <ng-template matStepLabel>T&C</ng-template>
+                                <form [formGroup]="agreementForm">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="content-row heading">
+                                                Hey, {{ this.basicInfoForm.value['name'].split(' ')[0] }} !
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="content-row sub-heading">
+                                                Glad that you came here to wish {{name}}.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="content-row">
+                                                Please read the following before proceeding.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="content-row">
+                                                <ol>
+                                                    <li>Try to answer as accurately as possible.</li>
+                                                    <li style="margin-top:1em;">Please try to provide your original name and other details genuinely.</li>
+                                                    <li style="margin-top:1em;">Any fake names and inappropriate content will be removed.</li>
+                                                </ol>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="content-row sub-heading">
+                                                If you have already provided a fake name, please go back and provide your genuine name.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="content-row">
+                                                Please agree to the above T&C to continue.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <mat-checkbox formControlName="hasAgreed" required>I Agree</mat-checkbox>
+                                        </div>
+                                    </div>
+                                    <div class="row" *ngIf="agreementForm.value['hasAgreed']">
+                                        <div class="col-md-12">
+                                            <div class="content-row">
+                                                You can wish in the coming sections.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="float-left">
+                                                <button mat-raised-button color="accent" matStepperPrevious>Back</button>
+                                            </div>
+                                            <div class="float-right">
+                                                <button mat-raised-button [disabled]="!this.agreementForm.value['hasAgreed']" color="primary" matStepperNext>Next</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </mat-step>
+                            <mat-step [stepControl]="aboutForm">
+                                <ng-template matStepLabel>About</ng-template>
+                                <form [formGroup]="aboutForm">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="content-row">
+                                               <p>{{ this.basicInfoForm.value['name'].split(' ')[0] }}, appreciate your efforts to agree with the terms and conditions.</p>
+                                               <p>Now, please answer the questions below.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12 col-lg-12">
+                                            <div class="content-row">
+                                                Since when do you know {{name}} ? <span class="asterix">*</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4 col-lg-3">
+                                            <div class="form-value">
+                                                <mat-form-field appearance="outline">
+                                                    <mat-select formControlName="whenKnown" placeholder="Select one" required>
+                                                        <mat-option value="Childhood">Childhood</mat-option>
+                                                        <mat-option value="School">School</mat-option>
+                                                        <mat-option value="College">College</mat-option>
+                                                        <mat-option value="Other">Other</mat-option>
+                                                    </mat-select>
+                                                    <mat-error *ngIf="!(this.aboutForm.value['whenKnown'].length>0)">Required</mat-error>
+                                                </mat-form-field>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-lg-2" *ngIf="aboutForm.value['whenKnown']=='Other'">
+                                            <div class="form-row">
+                                                If Other, then please specify
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-lg-3" *ngIf="aboutForm.value['whenKnown']=='Other'">
+                                            <div class="form-value">
+                                                <mat-form-field appearance="outline">
+                                                    <input matInput type="text" formControlName="whenKnownSpecify" autocomplete="off">
+                                                </mat-form-field>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12 col-lg-12">
+                                            <div class="content-row">
+                                                Do you remember how you met {{name}} or talked to her for the first time? <span class="asterix">*</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-3 col-lg-3">
+                                            <div class="form-value">
+                                                <mat-radio-group formControlName="rememberMet">
+                                                    <mat-radio-button value="yes">Yes</mat-radio-button>
+                                                    <mat-radio-button value="no">No</mat-radio-button>
+                                                </mat-radio-group>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 col-lg-2" *ngIf="aboutForm.value['rememberMet']=='yes'">
+                                            <div class="form-row">
+                                                If Yes, then please specify
+                                            </div>
+                                        </div>
+                                        <div class="col-md-5 col-lg-3" *ngIf="aboutForm.value['rememberMet']=='yes'">
+                                            <div class="form-value">
+                                                <mat-form-field appearance="outline">
+                                                    <textarea matInput formControlName="howMet"></textarea>
+                                                </mat-form-field>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12 col-lg-12">
+                                            <div class="content-row">
+                                                Do you have a nickname for {{name}}? <span class="asterix">*</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-3 col-lg-3">
+                                            <div class="form-value">
+                                                <mat-radio-group formControlName="hasNickname">
+                                                    <mat-radio-button value="yes">Yes</mat-radio-button>
+                                                    <mat-radio-button value="no">No</mat-radio-button>
+                                                </mat-radio-group>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 col-lg-2" *ngIf="aboutForm.value['hasNickname']=='yes'">
+                                            <div class="form-row">
+                                                If Yes, then nickname
+                                            </div>
+                                        </div>
+                                        <div class="col-md-5 col-lg-3" *ngIf="aboutForm.value['hasNickname']=='yes'">
+                                            <div class="form-value">
+                                                <mat-form-field appearance="outline">
+                                                    <input matInput formControlName="nickname" type="text" autocomplete="off">
+                                                </mat-form-field>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12 col-lg-12">
+                                            <div class="content-row">
+                                                Things you like the most in {{name}} <span class="asterix">*</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="form-value">
+                                                <mat-form-field appearance="outline">
+                                                    <textarea matInput placeholder="Type in briefly. Type 'none' if you dont have any" formControlName="likedThings"></textarea>
+                                                    <mat-error *ngIf="!(this.aboutForm.value['likedThings'].length>0)">Required</mat-error>
+                                                </mat-form-field>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12 col-lg-12">
+                                            <div class="content-row">
+                                                Your best memory with {{name}} <span class="asterix">*</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="form-value">
+                                                <mat-form-field appearance="outline">
+                                                    <textarea matInput placeholder="Type in briefly. Type 'none' if you dont have any" formControlName="bestMemory"></textarea>
+                                                    <mat-error *ngIf="!(this.aboutForm.value['bestMemory'].length>0)">Required</mat-error>
+                                                </mat-form-field>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="float-left">
+                                                <button mat-raised-button color="accent" matStepperPrevious>Back</button>
+                                            </div>
+                                            <div class="float-right">
+                                                <button mat-raised-button [disabled]="!this.aboutForm.valid" color="primary" matStepperNext>Next</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </mat-step>
+                            <mat-step [stepControl]="wishForm">
+                                <ng-template matStepLabel>Wish</ng-template>
+                                <form [formGroup]="wishForm">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="content-row">
+                                                {{ this.basicInfoForm.value['name'].split(' ')[0] }}, type in your wishes for {{name}} here, <span class="asterix">*</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="form-value">
+                                                <mat-form-field appearance="outline">
+                                                    <textarea matInput placeholder="Happy birthday {{this.name}}!" formControlName="wish"></textarea>
+                                                    <mat-error *ngIf="!(this.wishForm.value['wish'].length>0)">Required</mat-error>
+                                                </mat-form-field>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="float-left">
+                                                <button mat-raised-button color="accent" matStepperPrevious>Back</button>
+                                            </div>
+                                            <div class="float-right">
+                                                <mat-spinner diameter=35 *ngIf="isLoading"></mat-spinner>
+                                                <button *ngIf="!isLoading" [disabled]="isSent" mat-raised-button color="primary" (click)="saveWish()">Finish</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </mat-step>
+                        </mat-horizontal-stepper>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+    </div>

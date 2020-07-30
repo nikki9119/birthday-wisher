@@ -1,0 +1,18 @@
+.pwd-container{
+    font-family:'Sen',sans-serif;
+    padding-left:20%;
+    padding-top:10%;
+}
+
+:host ::ng-deep .mat-form-field-appearance-outline .mat-form-field-infix {
+    padding:0.5em 0 0.5em 0;
+}
+@media(min-width:1024px){
+    .pwd-container{
+        padding-left:40%;
+    }
+}
+
+:host ::ng-deep .mat-raised-button.mat-primary{
+    font-family:'Sen',sans-serif;
+}

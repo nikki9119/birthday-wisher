@@ -1,0 +1,30 @@
+<div class="container-fluid" *ngIf="!fallen">
+    <div class="big">
+        <div *ngIf="wished"> Thank you for wishing {{name}} ! </div>
+        <div *ngIf="!wished">
+            If you have not wished {{name}} yet,
+            <br>
+            Tap Menu -> Wish.
+        </div>
+        {{name}}'s birthday: 19 April 2020.
+    </div>
+</div>
+
+<div class="bg" *ngIf="fallen">
+    <!-- <div class="bg"> -->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="content-row head">
+                    Happy Birthday {{name}} !
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="content-row sub">
+                    May this year bring you immense happiness and pleasure!
+                </div>
+            </div>
+        </div>
+    <!-- </div> -->
+</div>

@@ -1,0 +1,33 @@
+<div class="container-fluid" *ngIf="fallen && logged">
+    <app-mat-spinner overlay="true" *ngIf="fetching"></app-mat-spinner>
+    <div class="wish-content" *ngIf="!fetching">
+        <div class="row content-row heading">
+            <div class="col-md-12">
+                Wishes:
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <mat-divider></mat-divider>
+            </div>
+        </div>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+            <div class="col" *ngFor="let wish of wishes">
+                <app-wish-card (emitEvent)="openWish(wish)" [data]="wish"></app-wish-card>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="content-row">
+                    If there's any abusive or inappropriate content, please let me know.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid" *ngIf="!fallen">
+    <div class="big">
+        This page will be made available on 19 April 2020.
+    </div>
+</div>

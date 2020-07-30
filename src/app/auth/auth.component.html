@@ -1,0 +1,11 @@
+<div class="pwd-container">
+    <form>
+        <label>Password:</label> <br>
+        <mat-form-field appearance="outline">
+            <input matInput type="password" [formControl]="pwd" autofocus required>
+            <mat-error *ngIf="!(this.pwd.value.length>0)">Required</mat-error>
+        </mat-form-field>
+        <br>
+        <button mat-raised-button color="primary" (click)="authenticate()">Authenticate</button>
+    </form>
+</div>

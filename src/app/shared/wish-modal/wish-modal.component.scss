@@ -1,0 +1,49 @@
+.content-row{
+    font-family:'Sen',sans-serif;
+    text-align:justify;
+}
+
+.heading{
+    font-size:1.5em;
+    color:#2196f3;
+}
+
+.close{
+    background-color: transparent !important;
+    box-shadow: none !important;
+    outline:none !important;
+    margin-top:-0.6em !important;
+    margin-right:-1em;
+}
+
+.mat-icon{
+    opacity: 50%;
+    font-size:1.5em !important;
+}
+
+:host ::ng-deep .mat-button-focus-overlay 
+{ 
+  background-color: transparent!important; 
+}
+
+.small{
+    font-size:0.8em;
+    margin-top:-1em;
+    color:grey;
+}
+
+.answer{
+    color:grey;
+    font-size:0.9em;
+}
+
+.mat-divider{
+    margin-top:0.5em;
+    margin-bottom:0.5em;
+}
+@media(min-width:768px){
+    .mat-divider{
+        margin-top:1em;
+        margin-bottom:1em;
+    }
+}

@@ -1,0 +1,122 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="content-row heading float-left">
+            {{data.name}}
+        </div>
+        <div class="float-right">
+            <button mat-mini-fab class="close" (click)="close()">
+                <mat-icon >close</mat-icon>
+            </button>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="content-row small">
+            {{data.gender}}
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="content-row question">
+            Since when {{data.name.split(' ')[0]}} knows you?
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="content-row answer">
+            {{data.whenKnown}}
+        </div>
+    </div>
+</div>
+<mat-divider></mat-divider>
+<div class="row" *ngIf="data.howMet">
+    <div class="col-md-12">
+        <div class="content-row">
+            {{data.name.split(' ')[0]}} remembers how {{data.gender=='Male'?'he':'she'}} talked to you for the first time.
+        </div>
+    </div>
+</div>
+<div class="row" *ngIf="!data.howMet">
+    <div class="col-md-12">
+        <div class="content-row">
+            {{data.name.split(' ')[0]}} does not remember how {{data.gender=='Male'?'he':'she'}} talked to you for the first time.
+        </div>
+    </div>
+</div>
+<div class="row" *ngIf="data.howMet">
+    <div class="col-md-12">
+        <div class="content-row">
+            How? <span class="answer">{{data.howMet}}</span>
+        </div>
+    </div>
+</div>
+<mat-divider></mat-divider>
+<div class="row" *ngIf="data.nickname">
+    <div class="col-md-12">
+        <div class="content-row">
+            {{data.name.split(' ')[0]}} has a nickname for you!
+        </div>
+    </div>
+</div>
+<div class="row" *ngIf="!data.nickname">
+    <div class="col-md-12">
+        <div class="content-row">
+            {{data.name.split(' ')[0]}} does not have any nicknames for you.
+        </div>
+    </div>
+</div>
+<div class="row" *ngIf="data.nickname">
+    <div class="col-md-12">
+        <div class="content-row">
+            Nickname: <span class="answer">{{data.nickname}}</span>
+        </div>
+    </div>
+</div>
+<mat-divider></mat-divider>
+<div class="row">
+    <div class="col-md-12">
+        <div class="content-row">
+            Things {{data.name.split(' ')[0]}} likes the most in you
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="content-row answer">
+            "{{data.likedThings}}"
+        </div>
+    </div>
+</div>
+<mat-divider></mat-divider>
+<div class="row">
+    <div class="col-md-12">
+        <div class="content-row">
+            {{data.name.split(' ')[0]}}'s best memory with you
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="content-row answer">
+            "{{data.bestMemory}}"
+        </div>
+    </div>
+</div>
+<mat-divider></mat-divider>
+<div class="row">
+    <div class="col-md-12">
+        <div class="content-row">
+            {{data.name.split(' ')[0]}}'s birthday wish for you
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="content-row answer">
+            "{{data.wish}}"
+        </div>
+    </div>
+</div>

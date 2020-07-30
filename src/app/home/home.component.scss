@@ -1,0 +1,47 @@
+.content-row{
+    font-family:'Sen',sans-serif;
+    padding-top:1em;
+    z-index:1;
+    opacity:1;
+    line-height:1.5em;
+}
+
+.big{
+    font-family: 'Sen',sans-serif;
+    font-size: 2em;
+    text-align: center;
+    line-height: 1.5em;
+    padding-top:2em;
+}
+
+.head{
+    color:#2196f3 !important;
+    font-size:3.5em;
+    font-weight:1000;
+    text-align:center;
+}
+
+.sub{
+    text-align:center;
+    font-size:1.5em;
+    font-weight:bold;
+}
+
+@media(min-width:1024px){
+    .head{
+        font-size:4.5em;
+    }
+    .sub{
+        font-size:2.5em;
+    }
+}
+
+.bg{
+    background-image: url('../../assets/birthday-1.jpg');
+    width:100%;
+    height:91.3%;
+    background-size:cover;
+    background-repeat: repeat;
+    z-index: 0;
+    background-attachment: fixed;
+}

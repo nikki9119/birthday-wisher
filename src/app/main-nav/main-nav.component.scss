@@ -1,0 +1,57 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 200px;
+}
+
+@media(min-width:1000px){
+  .sidenav{
+    display:none;
+  }
+}
+.spacer{
+  flex:1 1 auto;
+}
+
+mat-toolbar a{
+  display:inline-block;
+  color:white;
+  text-decoration: none;
+}
+
+mat-toolbar .mat-button{
+  font-family:'Sen',sans-serif;
+  font-size:0.8em;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  font-family:'Sen',sans-serif;
+  height:55px;
+}
+:host ::ng-deep .mat-list-base .mat-list-item .mat-list-item-content{
+  font-family:'Sen',sans-serif;
+}
+
+.title{
+  //margin-left:1em;
+  font-family:'Sen',sans-serif;
+}
+
+.menu-btn{
+  margin-left:-0.8em;
+  outline: none;
+}
+
+:host ::ng-deep .mat-button-focus-overlay 
+{ 
+  background-color: transparent!important; 
+}
+
+:host ::ng-deep .mat-drawer-content{
+  overflow-x: hidden;
+}
